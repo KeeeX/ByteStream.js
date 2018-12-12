@@ -1,7 +1,5 @@
 # ByteStream.js
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/PeculiarVentures/ByteStream.js/blob/master/LICENSE) [![CircleCI](https://circleci.com/gh/PeculiarVentures/ByteStream.js.svg?style=svg)](https://circleci.com/gh/PeculiarVentures/ByteStream.js) [![Known Vulnerabilities](https://snyk.io/test/github/PeculiarVentures/ByteStream.js/badge.svg)](https://snyk.io/test/github/PeculiarVentures/ByteStream.js) [![Coverage Status](https://coveralls.io/repos/github/PeculiarVentures/ByteStream.js/badge.svg?branch=master)](https://coveralls.io/github/PeculiarVentures/ByteStream.js?branch=master)
-
 ## ByteStream class
 
 _ByteStream_ class is the major class for all others. It provides many useful function for making search for patterns and data transformation. Optimized for fast as possible data processing.

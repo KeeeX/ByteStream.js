@@ -8,16 +8,22 @@
     {
       "email": "rmh@unmitigatedrisk.com",
       "name": "Ryan Hurst"
+    },
+    {
+      "email": "gabriel@keeex.net",
+      "name": "Gabriel Paul \"Cley Faye\" Risterucci"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/PeculiarVentures/ByteStream.js.git"
+    "url": "git://github.com/KeeeX/ByteStream.js.git"
   },
   "devDependencies": {
-    "babel-cli": "latest",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0",
     "babel-plugin-istanbul": "^4.1.5",
-    "babel-preset-env": "latest",
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "mocha": "^3.0.2",
@@ -27,10 +33,12 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "build": "babel src --compact=false --out-dir build --source-maps",
+    "build": "babel src --no-babelrc --config-file=./node.babelrc --out-dir=build --source-maps",
+    "buildBrowser": "babel src --no-babelrc --config-file=./browser.babelrc --out-dir=buildBrowser --source-maps",
     "watch": "babel src --compact=false --out-dir build --source-maps --watch",
-    "test": "cross-env NODE_ENV=test nyc mocha --require babel-register",
-    "prepublishOnly": "npm run build"
+    "test": "cross-env NODE_ENV=test nyc mocha --require @babel/register",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build && npm run buildBrowser"
   },
   "keywords": [
     "ES6",
@@ -40,10 +48,15 @@
     "byte",
     "access"
   ],
+  "files": [
+    "build",
+    "buildBrowser"
+  ],
   "name": "bytestreamjs",
-  "version": "1.0.22",
+  "version": "1.0.22-es5",
   "jsnext:main": "./src/bytestream.js",
   "module": "./src/bytestream.js",
   "main": "./build/bytestream.js",
+  "browser": "./buildBrowser/bytestream.js",
   "license": "MIT"
 }
