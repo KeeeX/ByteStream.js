@@ -1,5 +1,9 @@
 # ByteStream.js
 
+## About this repository
+
+This is an ES5-friendly fork of the original repository. No other changes are planned.
+
 ## ByteStream class
 
 _ByteStream_ class is the major class for all others. It provides many useful function for making search for patterns and data transformation. Optimized for fast as possible data processing.
